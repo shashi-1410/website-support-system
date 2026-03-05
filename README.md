@@ -173,7 +173,7 @@ http://127.0.0.1:5000
 
 ## 👨‍💻 Author
 
-Developed by **Bittu**
+Developed by **Shashi Kumar**
 
 Computer Science Engineering Student
-Interested in Web Development and SaaS Platforms
+Interested in Web Development (Frontend)
