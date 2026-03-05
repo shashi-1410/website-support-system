@@ -1,0 +1,132 @@
+{% if test_mode %}
+<div class="bg-red-600 text-white text-center py-2 font-semibold">
+TEST ENVIRONMENT MODE
+</div>
+{% endif %}
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Support System</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/static/styles.css">
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+<!-- Navbar -->
+
+<div class="bg-gray-900 text-white px-8 py-4 flex justify-between items-center">
+
+<h1 class="text-xl font-semibold">Support System</h1>
+
+<div class="flex items-center gap-4">
+
+<span class="text-gray-300">Logged in as <b>{{role}}</b></span>
+
+<a href="/logout" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded">
+Logout
+</a>
+
+</div>
+
+</div>
+
+<!-- Page Container -->
+
+<div class="max-w-6xl mx-auto mt-10">
+
+<h2 class="text-2xl font-bold text-gray-700 mb-6">
+{{banner}}
+</h2>
+
+<!-- Quick Actions -->
+
+<div class="grid grid-cols-3 gap-6 mb-10">
+
+<a href="/editor" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+<h3 class="text-lg font-semibold">Edit Website Content</h3>
+<p class="text-gray-500 mt-2">Modify homepage text and banners</p>
+</a>
+
+<a href="/?test=true" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+<h3 class="text-lg font-semibold">Open Test Environment</h3>
+<p class="text-gray-500 mt-2">Preview website changes safely</p>
+</a>
+
+<a href="/" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+<h3 class="text-lg font-semibold">Open Live Website</h3>
+<p class="text-gray-500 mt-2">View production website</p>
+</a>
+
+<a href="/logs" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+<h3 class="text-lg font-semibold">View Support Logs</h3>
+<p class="text-gray-500 mt-2">Check engineer activity logs</p>
+</a>
+
+<a href="/style_editor" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+<h3 class="text-lg font-semibold">Edit Website Style</h3>
+<p class="text-gray-500 mt-2">Modify button colors and UI</p>
+</a>
+
+<a href="/dashboard" class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+<h3 class="text-lg font-semibold">Support Dashboard</h3>
+<p class="text-gray-500 mt-2">Manage tickets and operations</p>
+</a>
+
+</div>
+
+<!-- Ticket Creation -->
+
+<div class="bg-white p-6 rounded-lg shadow">
+
+<h3 class="text-lg font-semibold mb-4">Create Support Ticket</h3>
+
+<form action="/create_ticket" method="post" class="flex gap-4" onsubmit="return validateTicket()">
+
+<input
+type="text"
+name="issue"
+placeholder="Describe the issue..."
+required
+class="flex-1 border rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+<button
+type="submit"
+class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded">
+
+Create Ticket
+
+</button>
+
+</form>
+
+<div class="mt-4">
+<a href="/tickets" class="text-blue-600 hover:underline">
+View All Tickets
+</a>
+</div>
+
+</div>
+
+</div>
+<script>
+
+function validateTicket(){
+
+let issue = document.getElementById("issueInput").value.trim();
+
+if(issue === ""){
+
+alert("Please describe the issue before creating a ticket.");
+return false;
+
+}
+
+return true;
+
+}
+
+</script>
+</body>
+</html>

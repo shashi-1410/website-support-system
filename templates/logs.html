@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Support Logs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 min-h-screen">
+
+<!-- Top Navbar -->
+
+<div class="bg-gray-900 text-white px-8 py-4 flex justify-between items-center">
+
+<h2 class="text-xl font-semibold">
+Support Activity Logs
+</h2>
+
+<a href="/dashboard" class="bg-red-500 hover:bg-red-600 px-4 py-2 rounded">
+Back to Dashboard
+</a>
+
+</div>
+
+<!-- Page Container -->
+
+<div class="max-w-6xl mx-auto mt-10 bg-white shadow-lg rounded-lg p-6">
+
+<h3 class="text-lg font-semibold mb-4 text-gray-700">
+Recent Support Actions
+</h3>
+
+<!-- Logs Table -->
+
+<div class="overflow-x-auto">
+
+<table class="min-w-full text-sm text-left">
+
+<thead class="bg-gray-200 text-gray-700">
+
+<tr>
+<th class="px-6 py-3">Ticket ID</th>
+<th class="px-6 py-3">Action</th>
+<th class="px-6 py-3">Engineer</th>
+</tr>
+
+</thead>
+
+<tbody class="divide-y">
+
+{% for log in logs %}
+
+<tr class="hover:bg-gray-50">
+
+<td class="px-6 py-3 font-medium">
+#{{log.ticket_id}}
+</td>
+
+<td class="px-6 py-3 text-gray-600">
+{{log.action}}
+</td>
+
+<td class="px-6 py-3 text-blue-600 font-semibold">
+{{log.engineer}}
+</td>
+
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
