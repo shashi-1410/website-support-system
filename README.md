@@ -6,7 +6,7 @@
 ![HTML](https://img.shields.io/badge/HTML-Frontend-orange?logo=html5)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A SaaS-style platform that simulates **Tier-1 Website Support operations**.
+A SaaS-style platform that simulates **Website Support operations**.
 This system allows support engineers to manage tickets, update website content, modify UI styles, and maintain support logs through a centralized dashboard.
 
 ---
