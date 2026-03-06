@@ -160,6 +160,40 @@ Open browser
 http://127.0.0.1:5000
 
 ---
+## 🔑 Demo Login Credentials
+
+You can use the following credentials to test the system.
+
+### 👑 Admin Access
+
+Admin users can manage tickets, view logs, and control website content.
+
+username: **admin**
+password: **admin123**
+
+---
+
+### 🛠 Support Engineer Access
+
+Support engineers can resolve tickets and maintain support logs.
+
+username: **support**
+password: **support123**
+
+---
+
+### 👤 Client Access
+
+Clients can create support tickets and track their status.
+
+username: **client**
+password: **client123**
+
+---
+
+⚠ **Note:** These credentials are provided for demonstration purposes only.
+Do not use real passwords in production systems.
+
 
 ## 📈 Future Improvements
 
